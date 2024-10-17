@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email use currying</title>
+</head>
+<body>
+    <h2>if some one responsible for "to" mean for email , and someone responsible for subject and someone respomsible for body</h2>
+    <script>
+        debugger
+        function emailData(to){
+            return function(subject){
+                return function(body){
+                    return `This is email : ${to} and this is subject : ${subject} and this is body : ${body}`;
+                }
+            }
+        }
+        let Email = prompt("enter email");
+        let Subject = prompt("enter a subject");
+        let Body = prompt("enter a body detail");
+        let step1 = emailData(Email);
+        let step2 = step1(Subject);
+        let step3 = step2(Body);
+        console.log(step3);
+        alert(step3);
+    </script>
+</body>
+</html>
